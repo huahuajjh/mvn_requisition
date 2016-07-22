@@ -5,17 +5,17 @@
 <struts>
 	<package name="registedInfoManagement" extends="loginInterceptor" namespace="/registedInfoManagement">
 		
-		<action name="addRegistedInfo" class="com.tq.requisition.presentation.actions.registedInfoManagement.AddRegistedInfo">
+		<action name="addRegistedInfo" class="com.tqmars.requisition.presentation.actions.registedInfoManagement.AddRegistedInfo">
 			<result name="success">../WEB-INF/view/registedInfoManagement/addRegistedInfo.jsp</result>
 		</action>
-		<action name="addRegistedInfoadd" method="add" class="com.tq.requisition.presentation.actions.registedInfoManagement.AddRegistedInfo"></action>
+		<action name="addRegistedInfoadd" method="add" class="com.tqmars.requisition.presentation.actions.registedInfoManagement.AddRegistedInfo"></action>
 		
-		<action name="queryRegistedInfo" class="com.tq.requisition.presentation.actions.registedInfoManagement.QueryRegistedInfo">
+		<action name="queryRegistedInfo" class="com.tqmars.requisition.presentation.actions.registedInfoManagement.QueryRegistedInfo">
 			<result name="success">../WEB-INF/view/registedInfoManagement/queryRegistedInfo.jsp</result>
 		</action>
-		<action name="queryRegistedInfolist" method="list" class="com.tq.requisition.presentation.actions.registedInfoManagement.QueryRegistedInfo"></action>
-		<action name="queryRegistedInfoedit" method="edit" class="com.tq.requisition.presentation.actions.registedInfoManagement.QueryRegistedInfo"></action>
-		<action name="queryRegistedInfodelete" method="delete" class="com.tq.requisition.presentation.actions.registedInfoManagement.QueryRegistedInfo"></action>
+		<action name="queryRegistedInfolist" method="list" class="com.tqmars.requisition.presentation.actions.registedInfoManagement.QueryRegistedInfo"></action>
+		<action name="queryRegistedInfoedit" method="edit" class="com.tqmars.requisition.presentation.actions.registedInfoManagement.QueryRegistedInfo"></action>
+		<action name="queryRegistedInfodelete" method="delete" class="com.tqmars.requisition.presentation.actions.registedInfoManagement.QueryRegistedInfo"></action>
 		
 	</package>
 </struts>

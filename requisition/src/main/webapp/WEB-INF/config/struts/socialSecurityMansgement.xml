@@ -7,37 +7,37 @@
 		namespace="/socialSecurityMansgement">
 		
 		<!-- 导入社保信息 -->
-		<action name="solmImportFile" class="com.tq.requisition.presentation.actions.socialSecurityMansgement.SolmImportFile">
+		<action name="solmImportFile" class="com.tqmars.requisition.presentation.actions.socialSecurityMansgement.SolmImportFile">
 			<result name="success">../WEB-INF/view/socialSecurityMansgement/solmImportFile.jsp</result>
 		</action>
-		<action name="solmImportFileGet" method="get" class="com.tq.requisition.presentation.actions.socialSecurityMansgement.SolmImportFile"></action>
-		<action name="solmImportFileAdd" method="add" class="com.tq.requisition.presentation.actions.socialSecurityMansgement.SolmImportFile"></action>
-		<action name="solmImportFileUpFile" method="upFile" class="com.tq.requisition.presentation.actions.socialSecurityMansgement.SolmImportFile"></action>
+		<action name="solmImportFileGet" method="get" class="com.tqmars.requisition.presentation.actions.socialSecurityMansgement.SolmImportFile"></action>
+		<action name="solmImportFileAdd" method="add" class="com.tqmars.requisition.presentation.actions.socialSecurityMansgement.SolmImportFile"></action>
+		<action name="solmImportFileUpFile" method="upFile" class="com.tqmars.requisition.presentation.actions.socialSecurityMansgement.SolmImportFile"></action>
 		
 		<!--  批量处理社保信息 -->
-		<action name="solmInfoBatch" class="com.tq.requisition.presentation.actions.socialSecurityMansgement.SolmInfoBatch">
+		<action name="solmInfoBatch" class="com.tqmars.requisition.presentation.actions.socialSecurityMansgement.SolmInfoBatch">
 			<result name="success">../WEB-INF/view/socialSecurityMansgement/solmInfoBatch.jsp</result>
 		</action>
-		<action name="solmInfoBatchList" method="list" class="com.tq.requisition.presentation.actions.socialSecurityMansgement.SolmInfoBatch"></action>
-		<action name="solmInfoBatchAdd" method="add" class="com.tq.requisition.presentation.actions.socialSecurityMansgement.SolmInfoBatch"></action>
+		<action name="solmInfoBatchList" method="list" class="com.tqmars.requisition.presentation.actions.socialSecurityMansgement.SolmInfoBatch"></action>
+		<action name="solmInfoBatchAdd" method="add" class="com.tqmars.requisition.presentation.actions.socialSecurityMansgement.SolmInfoBatch"></action>
 		
 		<!--   社保汇总信息 -->
-		<action name="solmInfoSummary" class="com.tq.requisition.presentation.actions.socialSecurityMansgement.SolmInfoSummary">
+		<action name="solmInfoSummary" class="com.tqmars.requisition.presentation.actions.socialSecurityMansgement.SolmInfoSummary">
 			<result name="success">../WEB-INF/view/socialSecurityMansgement/solmInfoSummary.jsp</result>
 		</action>
 		
 		<!--   查询社保台账 -->
-		<action name="solmQuery" class="com.tq.requisition.presentation.actions.socialSecurityMansgement.SolmQuery">
+		<action name="solmQuery" class="com.tqmars.requisition.presentation.actions.socialSecurityMansgement.SolmQuery">
 			<result name="success">../WEB-INF/view/socialSecurityMansgement/solmQuery.jsp</result>
 		</action>
-		<action name="solmQueryList" method="list" class="com.tq.requisition.presentation.actions.socialSecurityMansgement.SolmQuery"></action>
-		<action name="solmQueryEdit" method="edit" class="com.tq.requisition.presentation.actions.socialSecurityMansgement.SolmQuery"></action>
+		<action name="solmQueryList" method="list" class="com.tqmars.requisition.presentation.actions.socialSecurityMansgement.SolmQuery"></action>
+		<action name="solmQueryEdit" method="edit" class="com.tqmars.requisition.presentation.actions.socialSecurityMansgement.SolmQuery"></action>
 		
 		<!--   维护社保信息 -->
-		<action name="solmMaintain" class="com.tq.requisition.presentation.actions.socialSecurityMansgement.SolmMaintain">
+		<action name="solmMaintain" class="com.tqmars.requisition.presentation.actions.socialSecurityMansgement.SolmMaintain">
 			<result name="success">../WEB-INF/view/socialSecurityMansgement/solmMaintain.jsp</result>
 		</action>
-		<action name="solmMaintainList" method="list" class="com.tq.requisition.presentation.actions.socialSecurityMansgement.SolmMaintain"></action>
+		<action name="solmMaintainList" method="list" class="com.tqmars.requisition.presentation.actions.socialSecurityMansgement.SolmMaintain"></action>
 		
 	</package>
 </struts>

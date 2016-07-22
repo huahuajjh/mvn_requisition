@@ -7,68 +7,68 @@
 		
 		<!-- 用户管理 -->
 		<action name="sysAccountQuery"
-			class="com.tq.requisition.presentation.actions.management.AccountManagement"
+			class="com.tqmars.requisition.presentation.actions.management.AccountManagement"
 			method="sysAccountQuery">
 			<result name="success">../WEB-INF/view/management/accountManagement/sysAccountQuery.jsp
 			</result>
 		</action>
 		<!-- 获取用户列表 -->
 		<action name="sysAccountQueryList"
-			class="com.tq.requisition.presentation.actions.management.AccountManagement"
+			class="com.tqmars.requisition.presentation.actions.management.AccountManagement"
 			method="list">
 		</action>
 		<!-- 新增用户数据 -->
 		<action name="sysAccountQueryAdd"
-			class="com.tq.requisition.presentation.actions.management.AccountManagement"
+			class="com.tqmars.requisition.presentation.actions.management.AccountManagement"
 			method="add">
 		</action>
 		<!-- 修改用户信息 -->
 		<action name="sysAccountQueryEdit"
-			class="com.tq.requisition.presentation.actions.management.AccountManagement"
+			class="com.tqmars.requisition.presentation.actions.management.AccountManagement"
 			method="edit">
 		</action>
 		<!-- 冻结用户 -->
 		<action name="sysAccountQueryDisable"
-			class="com.tq.requisition.presentation.actions.management.AccountManagement"
+			class="com.tqmars.requisition.presentation.actions.management.AccountManagement"
 			method="disable">
 		</action>
 		<!-- 重置用户密码 -->
 		<action name="sysAccountQueryReset"
-			class="com.tq.requisition.presentation.actions.management.AccountManagement"
+			class="com.tqmars.requisition.presentation.actions.management.AccountManagement"
 			method="reset">
 		</action>
 		<!-- 检查用户名是否存在 -->
 		<action name="sysAccountExistsAccount"
-			class="com.tq.requisition.presentation.actions.management.AccountManagement"
+			class="com.tqmars.requisition.presentation.actions.management.AccountManagement"
 			method="existsAccount">
 		</action>
 		
 		<action name="sysCreateAccount"
-			class="com.tq.requisition.presentation.actions.management.AccountManagement"
+			class="com.tqmars.requisition.presentation.actions.management.AccountManagement"
 			method="sysCreateAccount">
 			<result name="success">../WEB-INF/view/management/accountManagement/sysCreateAccount.jsp
 			</result>
 		</action>
 		<action name="accountQuery"
-			class="com.tq.requisition.presentation.actions.management.RecycleAndOnekey"
+			class="com.tqmars.requisition.presentation.actions.management.RecycleAndOnekey"
 			method="accountQuery">
 			<result name="success">../WEB-INF/view/management/recycleAndOnekey/accountQuery.jsp
 			</result>
 		</action>
 		<action name="onekeyQuery"
-			class="com.tq.requisition.presentation.actions.management.RecycleAndOnekey"
+			class="com.tqmars.requisition.presentation.actions.management.RecycleAndOnekey"
 			method="onekeyQuery">
 			<result name="success">../WEB-INF/view/management/recycleAndOnekey/onekeyQuery.jsp
 			</result>
 		</action>
 		<action name="registedAgrcInfoQuery"
-			class="com.tq.requisition.presentation.actions.management.RecycleAndOnekey"
+			class="com.tqmars.requisition.presentation.actions.management.RecycleAndOnekey"
 			method="registedAgrcInfoQuery">
 			<result name="success">../WEB-INF/view/management/recycleAndOnekey/registedAgrcInfoQuery.jsp
 			</result>
 		</action>
 		<action name="removePInfoQuery"
-			class="com.tq.requisition.presentation.actions.management.RecycleAndOnekey"
+			class="com.tqmars.requisition.presentation.actions.management.RecycleAndOnekey"
 			method="removePInfoQuery">
 			<result name="success">../WEB-INF/view/management/recycleAndOnekey/removePInfoQuery.jsp
 			</result>
@@ -76,97 +76,97 @@
 		
 		<!-- 数据字典 -->
 		<action name="sysDataDict"
-			class="com.tq.requisition.presentation.actions.management.SysDataDict">
+			class="com.tqmars.requisition.presentation.actions.management.SysDataDict">
 			<result name="success">../WEB-INF/view/management/sysDataDict.jsp
 			</result>
 		</action>
-		<action name="sysDataDict*" method="{1}" class="com.tq.requisition.presentation.actions.management.SysDataDict"></action>
+		<action name="sysDataDict*" method="{1}" class="com.tqmars.requisition.presentation.actions.management.SysDataDict"></action>
 		
 		<action name="sysLog"
-			class="com.tq.requisition.presentation.actions.management.SysLog">
+			class="com.tqmars.requisition.presentation.actions.management.SysLog">
 			<result name="success">../WEB-INF/view/management/sysLog.jsp</result>
 		</action>
 		
 		<!-- 组织管理 -->
 		<action name="sysOrgManagement"
-			class="com.tq.requisition.presentation.actions.management.SysOrgManagement">
+			class="com.tqmars.requisition.presentation.actions.management.SysOrgManagement">
 			<result name="success">../WEB-INF/view/management/sysOrgManagement.jsp
 			</result>
 		</action>
 		<!-- 组织列表 -->
 		<action name="sysOrgManagementList"
-			class="com.tq.requisition.presentation.actions.management.SysOrgManagement" method="getOrgList">
+			class="com.tqmars.requisition.presentation.actions.management.SysOrgManagement" method="getOrgList">
 		</action>
 		<!-- 添加组织 -->
 		<action name="sysOrgManagementAdd"
-			class="com.tq.requisition.presentation.actions.management.SysOrgManagement" method="addOrg">
+			class="com.tqmars.requisition.presentation.actions.management.SysOrgManagement" method="addOrg">
 		</action>
 		<!-- 修改组织 -->
 		<action name="sysOrgManagementEdit"
-			class="com.tq.requisition.presentation.actions.management.SysOrgManagement" method="editOrg">
+			class="com.tqmars.requisition.presentation.actions.management.SysOrgManagement" method="editOrg">
 		</action>
 		<!-- 删除组织 -->
 		<action name="sysOrgManagementDelete"
-			class="com.tq.requisition.presentation.actions.management.SysOrgManagement" method="delete">
+			class="com.tqmars.requisition.presentation.actions.management.SysOrgManagement" method="delete">
 		</action>
 		
 		<!-- 部门列表 -->
 		<action name="sysDeptManagementList"
-			class="com.tq.requisition.presentation.actions.management.DeptMgt" method="list">
+			class="com.tqmars.requisition.presentation.actions.management.DeptMgt" method="list">
 		</action>
 		<!-- 新增部门 -->
 		<action name="sysDeptManagementAdd"
-			class="com.tq.requisition.presentation.actions.management.DeptMgt" method="add">
+			class="com.tqmars.requisition.presentation.actions.management.DeptMgt" method="add">
 		</action>
 		<!-- 修改部门 -->
 		<action name="sysDeptManagementEdit"
-			class="com.tq.requisition.presentation.actions.management.DeptMgt" method="edit">
+			class="com.tqmars.requisition.presentation.actions.management.DeptMgt" method="edit">
 		</action>
 		<!-- 删除部门 -->
 		<action name="sysDeptManagementDelete"
-			class="com.tq.requisition.presentation.actions.management.DeptMgt" method="delete">
+			class="com.tqmars.requisition.presentation.actions.management.DeptMgt" method="delete">
 		</action>
 		
 		<!-- 角色资源管理 -->
 		<action name="sysPermission"
-			class="com.tq.requisition.presentation.actions.management.SysPermission">
+			class="com.tqmars.requisition.presentation.actions.management.SysPermission">
 			<result name="success">../WEB-INF/view/management/sysPermission.jsp
 			</result>
 		</action>
 		<!-- 角色列表 -->
 		<action name="sysPermissionList"
-			class="com.tq.requisition.presentation.actions.management.SysPermission" method="list">
+			class="com.tqmars.requisition.presentation.actions.management.SysPermission" method="list">
 		</action>
 		<!-- 分配角色 -->
 		<action name="sysPermissionPMS"
-			class="com.tq.requisition.presentation.actions.management.SysPermission" method="pms">
+			class="com.tqmars.requisition.presentation.actions.management.SysPermission" method="pms">
 		</action>
 		<!-- 写入角色资源 -->
 		<action name="sysPermissionGetPMS"
-			class="com.tq.requisition.presentation.actions.management.SysPermission" method="getPMS">
+			class="com.tqmars.requisition.presentation.actions.management.SysPermission" method="getPMS">
 		</action>
 		
 		<!-- 角色管理页面 -->
 		<action name="sysRoleManage"
-			class="com.tq.requisition.presentation.actions.management.SysRoleManage">
+			class="com.tqmars.requisition.presentation.actions.management.SysRoleManage">
 			<result name="success">../WEB-INF/view/management/sysRoleManage.jsp
 			</result>
 		</action>
 		<!-- 角色列表 -->
 		<action name="sysRoleManageList"
-			class="com.tq.requisition.presentation.actions.management.SysRoleManage" method="list">
+			class="com.tqmars.requisition.presentation.actions.management.SysRoleManage" method="list">
 		</action>
 		<!-- 添加角色 -->
 		<action name="sysRoleManageAdd"
-			class="com.tq.requisition.presentation.actions.management.SysRoleManage" method="add">
+			class="com.tqmars.requisition.presentation.actions.management.SysRoleManage" method="add">
 		</action>
 		<!-- 删除角色 -->
 		<action name="sysRoleManageRemove"
-			class="com.tq.requisition.presentation.actions.management.SysRoleManage" method="remove">
+			class="com.tqmars.requisition.presentation.actions.management.SysRoleManage" method="remove">
 		</action>
 		<!-- 修改角色 -->
 		<action name="sysRoleManageEdit"
-			class="com.tq.requisition.presentation.actions.management.SysRoleManage" method="edit">
+			class="com.tqmars.requisition.presentation.actions.management.SysRoleManage" method="edit">
 		</action>
 		
 	</package>

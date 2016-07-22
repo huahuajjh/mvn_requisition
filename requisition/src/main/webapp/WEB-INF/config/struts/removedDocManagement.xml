@@ -5,19 +5,19 @@
 <struts>
 	<package name="removedDocManagement" extends="loginInterceptor" namespace="/removedDocManagement">
 	
-		<action name="removedInfoAdd" class="com.tq.requisition.presentation.actions.removedDocManagement.RemovedInfoAdd">
+		<action name="removedInfoAdd" class="com.tqmars.requisition.presentation.actions.removedDocManagement.RemovedInfoAdd">
 			<result name="success">../WEB-INF/view/removedDocManagement/removedInfoAdd.jsp</result>
 		</action>
-		<action name="removedInfoAddadd" method="add" class="com.tq.requisition.presentation.actions.removedDocManagement.RemovedInfoAdd"></action>
-		<action name="removedInfoAddUpFile" method="upFile" class="com.tq.requisition.presentation.actions.removedDocManagement.RemovedInfoAdd"></action>
+		<action name="removedInfoAddadd" method="add" class="com.tqmars.requisition.presentation.actions.removedDocManagement.RemovedInfoAdd"></action>
+		<action name="removedInfoAddUpFile" method="upFile" class="com.tqmars.requisition.presentation.actions.removedDocManagement.RemovedInfoAdd"></action>
 		
-		<action name="removedInfoQuery" class="com.tq.requisition.presentation.actions.removedDocManagement.RemovedInfoQuery">
+		<action name="removedInfoQuery" class="com.tqmars.requisition.presentation.actions.removedDocManagement.RemovedInfoQuery">
 			<result name="success">../WEB-INF/view/removedDocManagement/removedInfoQuery.jsp</result>
 		</action>
-		<action name="removedInfoQuerylist" method="list" class="com.tq.requisition.presentation.actions.removedDocManagement.RemovedInfoQuery"></action>
-		<action name="removedInfoQueryedit" method="edit" class="com.tq.requisition.presentation.actions.removedDocManagement.RemovedInfoQuery"></action>
-		<action name="removedInfoQuerydelete" method="delete" class="com.tq.requisition.presentation.actions.removedDocManagement.RemovedInfoQuery"></action>
-		<action name="removedInfoQueryDaoChu" method="daoChu" class="com.tq.requisition.presentation.actions.removedDocManagement.RemovedInfoQuery">  
+		<action name="removedInfoQuerylist" method="list" class="com.tqmars.requisition.presentation.actions.removedDocManagement.RemovedInfoQuery"></action>
+		<action name="removedInfoQueryedit" method="edit" class="com.tqmars.requisition.presentation.actions.removedDocManagement.RemovedInfoQuery"></action>
+		<action name="removedInfoQuerydelete" method="delete" class="com.tqmars.requisition.presentation.actions.removedDocManagement.RemovedInfoQuery"></action>
+		<action name="removedInfoQueryDaoChu" method="daoChu" class="com.tqmars.requisition.presentation.actions.removedDocManagement.RemovedInfoQuery">  
 		    <result name="success" type="stream">  
 		        <param name="contentType">application/vnd.ms-excel</param>  
 		        <param name="contentDisposition">attachment; filename="${downloadChineseFileName}.xlsx"</param>  
@@ -25,7 +25,7 @@
 		    </result>  
 		</action>
 		
-		<action name="removedInfoMaintain" class="com.tq.requisition.presentation.actions.removedDocManagement.RemovedInfoMaintain">
+		<action name="removedInfoMaintain" class="com.tqmars.requisition.presentation.actions.removedDocManagement.RemovedInfoMaintain">
 			<result name="success">../WEB-INF/view/removedDocManagement/removedInfoMaintain.jsp</result>
 		</action>
 		

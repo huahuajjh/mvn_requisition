@@ -5,10 +5,10 @@
 <struts>
 	<package name="onekeyQuery" extends="loginInterceptor" namespace="/onekeyQuery">
 		
-		<action name="onekeyQuery" class="com.tq.requisition.presentation.actions.onekeyQuery.OnekeyQuery">
+		<action name="onekeyQuery" class="com.tqmars.requisition.presentation.actions.onekeyQuery.OnekeyQuery">
 			<result name="success">../WEB-INF/view/onekeyQuery/onekeyQuery.jsp</result>
 		</action>
-		<action name="onekeyQueryGetInfo" method="getInfo" class="com.tq.requisition.presentation.actions.onekeyQuery.OnekeyQuery"></action>
+		<action name="onekeyQueryGetInfo" method="getInfo" class="com.tqmars.requisition.presentation.actions.onekeyQuery.OnekeyQuery"></action>
 
 	</package>
 </struts>

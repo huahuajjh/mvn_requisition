@@ -7,50 +7,50 @@
 						http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 		
 		<!-- hibernate仓储上下文映射，获取hibernate上下文的封装对象 -->
-		<bean id="hbRepositoryContext" class="com.tq.requisition.infrastructure.Repository.HbRepositoryContext"></bean>
+		<bean id="hbRepositoryContext" class="com.tqmars.requisition.infrastructure.Repository.HbRepositoryContext"></bean>
 		
 		<!-- hibernate仓储 -->
-		<bean id="hbRepository" class="com.tq.requisition.infrastructure.Repository.HbRepository">
+		<bean id="hbRepository" class="com.tqmars.requisition.infrastructure.Repository.HbRepository">
 			<constructor-arg index="0" ref="hbRepositoryContext"/>
 		</bean>
 		
 		<!-- 账户仓储 -->
-		<bean id="accountRepository" class="com.tq.requisition.infrastructure.Repository.account.AccountRepository">
+		<bean id="accountRepository" class="com.tqmars.requisition.infrastructure.Repository.account.AccountRepository">
 			<constructor-arg index="0" ref="hbRepositoryContext"/>			
 		</bean>
 		
 		<!-- 角色仓储 -->
-		<bean id="roleRepository" class="com.tq.requisition.infrastructure.Repository.role.RoleRepository">
+		<bean id="roleRepository" class="com.tqmars.requisition.infrastructure.Repository.role.RoleRepository">
 			<constructor-arg index="0" ref="hbRepositoryContext"/>
 		</bean>
 		
 		<!-- 组织仓储 -->
-		<bean id="orgRepository" class="com.tq.requisition.infrastructure.Repository.organization.OrganizationRepository">
+		<bean id="orgRepository" class="com.tqmars.requisition.infrastructure.Repository.organization.OrganizationRepository">
 			<constructor-arg index="0" ref="hbRepositoryContext"/>
 		</bean>
 		
 		<!-- 部门仓储 -->
-		<bean id="deptRepository" class="com.tq.requisition.infrastructure.Repository.department.DepartmentRepository">
+		<bean id="deptRepository" class="com.tqmars.requisition.infrastructure.Repository.department.DepartmentRepository">
 			<constructor-arg index="0" ref="hbRepositoryContext"/>
 		</bean>
 		
 		<!-- 角色账户关系仓储 -->
-		<bean id="roleAccRepository" class="com.tq.requisition.infrastructure.Repository.roleAccount.RoleAccountRepository">
+		<bean id="roleAccRepository" class="com.tqmars.requisition.infrastructure.Repository.roleAccount.RoleAccountRepository">
 			<constructor-arg index="0" ref="hbRepositoryContext"/>
 		</bean>
 		
 		<!-- 资源仓储 -->
-		<bean id="resourceRepository" class="com.tq.requisition.infrastructure.Repository.resource.ResourceRepository">
+		<bean id="resourceRepository" class="com.tqmars.requisition.infrastructure.Repository.resource.ResourceRepository">
 			<constructor-arg index="0" ref="hbRepositoryContext"/>
 		</bean>
 		
 		<!-- 资源角色仓储 -->
-		<bean id="resRoleRepository" class="com.tq.requisition.infrastructure.Repository.resRole.ResRoleRepository">
+		<bean id="resRoleRepository" class="com.tqmars.requisition.infrastructure.Repository.resRole.ResRoleRepository">
 			<constructor-arg index="0" ref="hbRepositoryContext"/>
 		</bean>
 		
 		<!-- 地址仓储 -->
-		<bean id="addressRepository" class="com.tq.requisition.infrastructure.Repository.address.AddressRepository">
+		<bean id="addressRepository" class="com.tqmars.requisition.infrastructure.Repository.address.AddressRepository">
 			<constructor-arg index="0" ref="hbRepositoryContext"/>
 		</bean>
 		
@@ -60,12 +60,12 @@
 		
 		<!-- 业务接口契约 -->
 		<!-- 用户相关实现类 -->
-		<bean id="userService" class="com.tq.requisition.application.userAssociatedImpl.UserServiceImpl">
+		<bean id="userService" class="com.tqmars.requisition.application.userAssociatedImpl.UserServiceImpl">
 			<constructor-arg index="0" ref="accountRepository"/>
 		</bean>
 		
 		<!-- 账户操作相关实现类 -->
-		<bean id="accountService" class="com.tq.requisition.application.sysManagement.AccountServiceImpl">
+		<bean id="accountService" class="com.tqmars.requisition.application.sysManagement.AccountServiceImpl">
 			<constructor-arg index="0" ref="hbRepositoryContext"/>
 			<constructor-arg index="1" ref="accountRepository"/>
 			<constructor-arg index="2" ref="deptRepository"/>
@@ -74,14 +74,14 @@
 		</bean>
 		
 		<!-- 角色操作相关实现类 -->
-		<bean id="roleService" class="com.tq.requisition.application.sysManagement.RoleServiceImpl">
+		<bean id="roleService" class="com.tqmars.requisition.application.sysManagement.RoleServiceImpl">
 			<constructor-arg index="0" ref="roleRepository"/>
 			<constructor-arg index="1" ref="accountRepository"/>
 			<constructor-arg index="2" ref="hbRepositoryContext"/>
 		</bean>
 		
 		<!-- 地址服務操作 -->
-		<bean id="addressService" class="com.tq.requisition.application.share.AddressServiceContractImpl">
+		<bean id="addressService" class="com.tqmars.requisition.application.share.AddressServiceContractImpl">
 			<constructor-arg index="0" ref="hbRepositoryContext"/>
 			<constructor-arg index="1" ref="addressRepository"/>
 		</bean>

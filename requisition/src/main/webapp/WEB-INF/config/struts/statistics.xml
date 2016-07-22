@@ -5,10 +5,10 @@
 <struts>
 	<package name="statistics" extends="loginInterceptor" namespace="/statistics">
 		
-		<action name="statistics" class="com.tq.requisition.presentation.actions.statistics.Statistics">
+		<action name="statistics" class="com.tqmars.requisition.presentation.actions.statistics.Statistics">
 			<result name="success">../WEB-INF/view/statistics/statistics.jsp</result>
 		</action>
-		<action name="statisticsDaoChu" method="daoChu" class="com.tq.requisition.presentation.actions.statistics.Statistics">
+		<action name="statisticsDaoChu" method="daoChu" class="com.tqmars.requisition.presentation.actions.statistics.Statistics">
 			<result name="success" type="stream">  
 		        <param name="contentType">application/vnd.ms-excel</param>  
 		        <param name="contentDisposition">attachment; filename="${downloadChineseFileName}.xlsx"</param>  

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tqmars.requisition.domain.model.visits">
+
+    <class name="Visits" table="tb_visit_info">
+        <id name="id" column="id" type="org.hibernate.type.UUIDCharType">
+        	<generator class="assigned" />
+        </id>
+		<property name="otherMsg" column="other_msg" type="string" length="70"/>
+		<property name="visitMaterialPath" column="visit_material_path" type="string" length="250"/>
+		<property name="visitorAddr" column="address" type="string"  />
+		<property name="visitorName" column="name" type="string" length="30"/>
+		<property name="visitorTel" column="tel" type="string" length="12" />
+		<property name="visitProId" column="visit_pro_id" type="string"  length="70" not-null="true" />
+		<property name="del" column="is_del" type="boolean"  not-null="true" />
+		<property name="proName" column="visit_pro_name" type="string"  length="200" not-null="true" />
+		<property name="visitReason" column="visit_reason" type="string"  />
+		<property name="visitTime" column="visit_date" type="date"  not-null="true"/>
+    </class>
+
+</hibernate-mapping>

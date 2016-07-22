@@ -5,14 +5,14 @@
 <struts>
 	<package name="supervisionManagement" extends="loginInterceptor" namespace="/supervisionManagement">
 		
-		<action name="infoSummary" class="com.tq.requisition.presentation.actions.supervisionManagement.InfoSummary">
+		<action name="infoSummary" class="com.tqmars.requisition.presentation.actions.supervisionManagement.InfoSummary">
 			<result name="success">../WEB-INF/view/supervisionManagement/infoSummary.jsp</result>
 		</action>
 		
-		<action name="infoSummaryGetPersonsAtHeadId" method="getPersonsAtHeadId" class="com.tq.requisition.presentation.actions.supervisionManagement.InfoSummary"></action>
-		<action name="infoSummaryZhuanHuMsg" method="zhuanHuMsg" class="com.tq.requisition.presentation.actions.supervisionManagement.InfoSummary"></action>
-		<action name="infoSummarySheBaoMsg" method="sheBaoMsg" class="com.tq.requisition.presentation.actions.supervisionManagement.InfoSummary"></action>
-		<action name="infoSummaryGouFangQuanMsg" method="gouFangQuanMsg" class="com.tq.requisition.presentation.actions.supervisionManagement.InfoSummary"></action>
+		<action name="infoSummaryGetPersonsAtHeadId" method="getPersonsAtHeadId" class="com.tqmars.requisition.presentation.actions.supervisionManagement.InfoSummary"></action>
+		<action name="infoSummaryZhuanHuMsg" method="zhuanHuMsg" class="com.tqmars.requisition.presentation.actions.supervisionManagement.InfoSummary"></action>
+		<action name="infoSummarySheBaoMsg" method="sheBaoMsg" class="com.tqmars.requisition.presentation.actions.supervisionManagement.InfoSummary"></action>
+		<action name="infoSummaryGouFangQuanMsg" method="gouFangQuanMsg" class="com.tqmars.requisition.presentation.actions.supervisionManagement.InfoSummary"></action>
 		
 	</package>
 </struts>

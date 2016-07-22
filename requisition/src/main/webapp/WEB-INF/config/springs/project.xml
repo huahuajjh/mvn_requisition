@@ -7,12 +7,12 @@
 						http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 		<!-- 项目管理 -->
 		<!-- 项目管理倉儲 -->
-		<bean id="proRepository" class="com.tq.requisition.infrastructure.Repository.project.ProjectRepository">
+		<bean id="proRepository" class="com.tqmars.requisition.infrastructure.Repository.project.ProjectRepository">
 			<constructor-arg index="0"  ref="hbRepositoryContext"/>
 		</bean>
 		
 		<!-- 项目管理應用層業務契約 -->
-		<bean id="proMgtServiceContract" class="com.tq.requisition.application.proMgt.ProMgtServiceIContractmpl">
+		<bean id="proMgtServiceContract" class="com.tqmars.requisition.application.proMgt.ProMgtServiceIContractmpl">
 			<constructor-arg index="0"  ref="hbRepositoryContext"/>
 			<constructor-arg index="1"  ref="proRepository"/>
 		</bean>

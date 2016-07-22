@@ -8,22 +8,22 @@
 						
 		<!-- 类型字段仓储 -->
 		<!-- 户口类型仓储 -->
-		<bean id="householdReposotory" class="com.tq.requisition.infrastructure.Repository.householdType.HouseholdTypeRepository">
+		<bean id="householdReposotory" class="com.tqmars.requisition.infrastructure.Repository.householdType.HouseholdTypeRepository">
 			<constructor-arg index="0" ref="hbRepositoryContext"/>
 		</bean>
 		
 		<!-- 与户主关系类型仓储 -->
-		<bean id="relationshipRepository" class="com.tq.requisition.infrastructure.Repository.relationshipType.RelationshipTypeRepository">
+		<bean id="relationshipRepository" class="com.tqmars.requisition.infrastructure.Repository.relationshipType.RelationshipTypeRepository">
 			<constructor-arg index="0" ref="hbRepositoryContext"/>
 		</bean>
 				
 		<!-- 社保类型仓储 -->
-		<bean id="socialsecurityRepository" class="com.tq.requisition.infrastructure.Repository.socialsecurityType.SocialsecurityTypeRepository">
+		<bean id="socialsecurityRepository" class="com.tqmars.requisition.infrastructure.Repository.socialsecurityType.SocialsecurityTypeRepository">
 			<constructor-arg index="0" ref="hbRepositoryContext"/>
 		</bean>
 		
 		<!-- 字段类型service contract -->
-		<bean id="shareTypeService" class="com.tq.requisition.application.share.ShareTypeServiceImpl">
+		<bean id="shareTypeService" class="com.tqmars.requisition.application.share.ShareTypeServiceImpl">
 			<constructor-arg index="0" ref="hbRepositoryContext"/>
 			<constructor-arg index="1" ref="householdReposotory"/>
 			<constructor-arg index="2" ref="relationshipRepository"/>

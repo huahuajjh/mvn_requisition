@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tqmars.requisition.domain.model.removeFamily">
+
+    <class name="Family" table="tb_family">
+        <id name="id" column="id" type="org.hibernate.type.UUIDCharType">
+        	<generator class="assigned"></generator>
+        </id>
+		<property name="headName" column="head_name" length="30" type="string" not-null="true"  />
+		<property name="proId" column="pro_id" type="org.hibernate.type.UUIDCharType" length="70" not-null="true" />
+		<property name="headId" column="head_id" type="org.hibernate.type.UUIDCharType" not-null="true" length="70" />
+		<property name="communityId" column="community_id" length="70" type="org.hibernate.type.UUIDCharType" />
+		<property name="address" column="address" type="string" length="120"/>
+		<property name="streetId" column="street_id" length="70" type="org.hibernate.type.UUIDCharType" />
+		<property name="fmlNumber" column="family_number" length="2" type="integer" />
+		<property name="houseLegalArea" column="house_legal_area"  type="float" />
+		<property name="houseIllegalArea" column="house_illegal_area"  type="float"/>
+		<property name="satuationDesc" column="situation_desc"  type="string" length="1000"/>
+		<property name="dealSolution" column="deal_solution"  type="string" length="200"/>
+		<property name="unionSuggestion" column="union_suggestion"  type="string" length="200"/>
+		<property name="remark" column="remark"  type="string" length="70"/>
+		<property name="houseImgPath" column="house_img_path"  type="string" length="250"/>
+		<property name="proName" column="pro_name"  type="string" length="200"/>
+		<property name="groupId" column="group_id"  type="org.hibernate.type.UUIDCharType" length="70"/>
+		<property name="unionSuggestionPath" column="union_suggestion_path"  type="string" length="255"/>
+		<property name="image" column="image"  type="string" length="255"/>
+		
+		<!-- 创建人的ID -->
+		<property name="createUid" column="create_uId"  type="string"   />
+		<!-- 创建时间 -->
+		<property name="createDate" column="create_date"  type="date"  />
+    </class>
+
+</hibernate-mapping>

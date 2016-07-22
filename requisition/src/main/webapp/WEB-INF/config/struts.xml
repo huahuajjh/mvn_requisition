@@ -11,14 +11,14 @@
 	<include file="../config/loginInterceptor.xml"></include>
 	
 	<package name="requisition_land" extends="loginInterceptor"  namespace="/">
-		<action name="index" class="com.tq.requisition.presentation.actions.Index">
+		<action name="index" class="com.tqmars.requisition.presentation.actions.Index">
 			<result name="success">/WEB-INF/view/index.jsp</result>
 		</action>
-		<action name="leftAndTop" class="com.tq.requisition.presentation.actions.share.LeftAndTop">
+		<action name="leftAndTop" class="com.tqmars.requisition.presentation.actions.share.LeftAndTop">
 			<result name="success">/WEB-INF/view/share/leftAndTop.jsp</result>
 		</action>
-		<action name="editPassword" method="editPassword" class="com.tq.requisition.presentation.actions.Index"></action>
-		<action name="getRes" class="com.tq.requisition.presentation.actions.Index"  method="getRes"></action>
+		<action name="editPassword" method="editPassword" class="com.tqmars.requisition.presentation.actions.Index"></action>
+		<action name="getRes" class="com.tqmars.requisition.presentation.actions.Index"  method="getRes"></action>
 	</package>
 	
 	<include file="../config/struts/management.xml"></include>

@@ -6,17 +6,17 @@
 						http://www.springframework.org/schema/context
 						http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 		<!-- 拆迁户仓储 -->
-		<bean id="fmlRepository" class="com.tq.requisition.infrastructure.Repository.removeFamily.FamilyRepository">
+		<bean id="fmlRepository" class="com.tqmars.requisition.infrastructure.Repository.removeFamily.FamilyRepository">
 			<constructor-arg index="0" ref="hbRepositoryContext"/>
 		</bean>
 		
 		<!-- 拆迁户成员仓储 -->
-		<bean id="fmlItemRepository" class="com.tq.requisition.infrastructure.Repository.fmlItem.FamilyItemRepository">
+		<bean id="fmlItemRepository" class="com.tqmars.requisition.infrastructure.Repository.fmlItem.FamilyItemRepository">
 			<constructor-arg index="0" ref="hbRepositoryContext"/>
 		</bean>
 						
 		<!-- 拆迁户应用层 -->
-		<bean id="fmlService" class="com.tq.requisition.application.fmlMgtImpl.FamilyMgtServiceImpl">
+		<bean id="fmlService" class="com.tqmars.requisition.application.fmlMgtImpl.FamilyMgtServiceImpl">
 			<constructor-arg index="0" ref="hbRepositoryContext"/>
 			<constructor-arg index="1" ref="fmlRepository"/>
 			<constructor-arg index="2" ref="proRepository"/>
@@ -26,7 +26,7 @@
 		</bean>
 		
 		<!-- 组织管理服务(应用层) -->
-		<bean id="fmlItemService" class="com.tq.requisition.application.fmlMgtImpl.FamilyItemServiceImpl">
+		<bean id="fmlItemService" class="com.tqmars.requisition.application.fmlMgtImpl.FamilyItemServiceImpl">
 			<constructor-arg index="0" ref="hbRepositoryContext"/>
 			<constructor-arg index="1" ref="fmlItemRepository"/>
 			<constructor-arg index="2" ref="removedInfoRepository"/>

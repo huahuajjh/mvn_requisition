@@ -6,19 +6,19 @@
 						http://www.springframework.org/schema/context
 						http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 		<!-- 转户信息仓储 -->
-		<bean id="transferRepository" class="com.tq.requisition.infrastructure.Repository.transferMgt.TransferMgtRepository">
+		<bean id="transferRepository" class="com.tqmars.requisition.infrastructure.Repository.transferMgt.TransferMgtRepository">
 			<constructor-arg index="0" ref="hbRepositoryContext"/>
 		</bean>
 		
 		<!-- 转户领域服务 -->
-		<bean id="transferDomainService" class="com.tq.requisition.domain.service.transferMgt.TransferMgtServiceImpl">
+		<bean id="transferDomainService" class="com.tqmars.requisition.domain.service.transferMgt.TransferMgtServiceImpl">
 			<constructor-arg index="0" ref="hbRepositoryContext"/>
 			<constructor-arg index="1" ref="transferRepository"/>
 			<constructor-arg index="2" ref="fmlItemRepository"/>
 		</bean>
 		
 		<!-- 转户应用层服务 -->
-		<bean id="transferService" class="com.tq.requisition.application.transferMgt.TransferMgtServiceImpl">
+		<bean id="transferService" class="com.tqmars.requisition.application.transferMgt.TransferMgtServiceImpl">
 			<constructor-arg index="0" ref="hbRepositoryContext"/>
 			<constructor-arg index="1" ref="transferRepository"/>
 			<constructor-arg index="2" ref="transferDomainService"/>
