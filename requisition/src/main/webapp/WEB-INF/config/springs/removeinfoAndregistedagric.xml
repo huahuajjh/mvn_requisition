@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xmlns:context="http://www.springframework.org/schema/context"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+		<!-- 已迁户人员仓储 -->
+		<bean id="removedInfoRepository" class="com.tq.requisition.infrastructure.Repository.removedinfo.RemovedInfoRepository">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+		</bean>
+		
+		<!-- 在籍农业人口信息仓储 -->
+		<bean id="registedAgricRepository" class="com.tq.requisition.infrastructure.Repository.registedAgricultureInfo.RegistedAgricultureInfoRepository">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+		</bean>
+						
+		<!-- 已迁户人员应用层 -->
+		<bean id="removedInfoService" class="com.tq.requisition.application.removedInfo.RemovedInfoServiceImpl">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+			<constructor-arg index="1" ref="removedInfoRepository"/>
+		</bean>
+		
+		<!-- 在籍农业人口信息(应用层) -->
+		<bean id="registedAgricService" class="com.tq.requisition.application.registedAgric.RegistedAgricServiceImpl">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+			<constructor-arg index="1" ref="registedAgricRepository"/>
+		</bean>
+</beans>

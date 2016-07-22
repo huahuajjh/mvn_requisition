@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tq.requisition.domain.model.resource">
+
+    <class name="Resource" table="tb_resource">
+        <id name="id" column="id"  type="org.hibernate.type.UUIDCharType">
+        	<generator class="assigned"></generator>
+        </id>
+		<property name="icon" column="icon"  type="string" length="70"/>
+		<property name="visible" column="is_del"  type="boolean" not-null="true" />
+		<property name="title" column="title"  type="string" not-null="true"  length="30"/>
+		<property name="link" column="link"  type="string"  length="70"/>
+		<property name="order" column="resource_order"  type="integer"  length="11" not-null="true"/>
+		<property name="parentResourceId" column="parent_res_id"  type="org.hibernate.type.UUIDCharType" />
+		<property name="children" column="has_children"  type="boolean" />
+		<property name="path" column="path"  type="string" />
+		<property name="htmlId" column="html_id"  type="string"  length="30"/>
+		<property name="html" column="html"  type="string" length="250"/>
+		<property name="hierarchy" column="hierarchy"  type="integer" length="11"/>
+		<property name="type" column="res_type"  type="integer" />
+		<property name="moudle" column="moudle"  type="string" />
+		
+    </class>
+
+</hibernate-mapping>

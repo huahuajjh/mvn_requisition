@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="closeSessionInterceptor" extends="struts-default">
+	        <interceptors>
+	            <!-- 定义是否登陆控制拦截器 -->
+	            <interceptor name="closeSession" class="com.tq.requisition.presentation.Interceptor.CloseSessionInterceptor" />
+	            <!-- 定义一个包含权限控制的拦截器栈 -->
+	            <interceptor-stack name="closeSessionDefault">
+	            	<interceptor-ref name="closeSession" />
+	                <interceptor-ref name="defaultStack" />
+	            </interceptor-stack>
+	        </interceptors>
+	        <!-- 定义默认拦截器 -->
+	        <default-interceptor-ref name="closeSessionDefault" />
+	 </package>
+ </struts>

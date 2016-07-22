@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="loginInterceptor" extends="closeSessionInterceptor">
+	        <interceptors>
+	            <!-- 定义是否登陆控制拦截器 -->
+	            <interceptor name="isLogin" class="com.tq.requisition.presentation.Interceptor.LoginInterceptor" />
+	            <!-- 定义一个包含权限控制的拦截器栈 -->
+	            <interceptor-stack name="loginDefault">
+	                <interceptor-ref name="closeSessionDefault" />
+	                <interceptor-ref name="isLogin" />
+	            </interceptor-stack>
+	        </interceptors>
+	        <!-- 定义默认拦截器 -->
+	        <default-interceptor-ref name="loginDefault" />
+	        <!-- 定义全局处理结果 -->
+	        <global-results>
+	            <!-- 逻辑名为login的结果，映射到/login.jsp页面 -->
+	            <result name="login">/login.jsp</result>
+	        </global-results>
+	 </package>
+ </struts>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+"http://struts.apache.org/dtds/struts-2.0.dtd" >
+<struts>
+	<package name="messageManagement" extends="loginInterceptor" namespace="/messageManagement">
+		
+		<action name="visitAdd" class="com.tq.requisition.presentation.actions.messageManagement.VisitAdd">
+			<result name="success">../WEB-INF/view/messageManagement/visitAdd.jsp</result>
+		</action>
+		<action name="visitAddadd" method="add" class="com.tq.requisition.presentation.actions.messageManagement.VisitAdd"></action>
+		
+		<action name="visitQuery" class="com.tq.requisition.presentation.actions.messageManagement.VisitQuery">
+			<result name="success">../WEB-INF/view/messageManagement/visitQuery.jsp</result>
+		</action>
+		<action name="visitQuerylist" method="list" class="com.tq.requisition.presentation.actions.messageManagement.VisitQuery"></action>
+		<action name="visitQueryedit" method="edit" class="com.tq.requisition.presentation.actions.messageManagement.VisitQuery"></action>
+		<action name="visitQuerydelete" method="delete" class="com.tq.requisition.presentation.actions.messageManagement.VisitQuery"></action>
+		
+		<action name="visitMaintain" class="com.tq.requisition.presentation.actions.messageManagement.VisitMaintain">
+			<result name="success">../WEB-INF/view/messageManagement/visitMaintain.jsp</result>
+		</action>
+		
+	</package>
+</struts>

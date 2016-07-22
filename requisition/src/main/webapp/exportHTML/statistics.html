@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="../assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../assets/css/style.css" rel="stylesheet" />
+    <link href="../assets/plugins/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" />
+	<link href="../assets/plugins/bootstrap-datepicker/css/datepicker-theme.css" rel="stylesheet" />
+    <style type="text/css">
+    	html,body{
+    		background-color: #fff;
+    	}
+    </style>
+  </head>
+  
+  <body>
+  	     <div class="row" id="selectExportModal">
+  	     	<div class="col-xs-12">
+      			<h4 class="bk-padding-top-10bk-docs-font-weight-300">导出的时间范围</h4>
+      		</div>
+      		<div class="col-xs-12" style="padding-bottom: 10px;">
+      			<div class="form-group">
+					<label class="col-md-3 control-label" for="text-input">时间段：</label>
+					<div class="col-md-9">
+						<div class="input-daterange input-group" data-plugin-datepicker="">
+							<span class="input-group-addon">
+								<i class="fa fa-calendar"></i>
+							</span>
+							<input type="text" class="form-control" id="startDate" placeholder="____-__-__" data-plugin-masked-input="" data-input-mask="9999-99-99">
+							<span class="input-group-addon">到</span>
+							<input type="text" class="form-control" id="endDate" placeholder="____-__-__" data-plugin-masked-input="" data-input-mask="9999-99-99">
+						</div>
+					</div>
+				</div>
+      		</div>
+      		<div class="col-md-12">
+      			<h4 class="bk-padding-top-10bk-docs-font-weight-300">基本信息</h4>
+      		</div>
+      		<div class="col-xs-4">
+      			<div class="checkbox-custom checkbox-inline">
+					<input type="checkbox" checked value="0" name="colIndex"> 
+					<label>项目名称</label>
+				</div>
+      		</div>
+      		<div class="col-xs-4">
+      			<div class="checkbox-custom checkbox-inline">
+					<input type="checkbox" checked value="1" name="colIndex"> 
+					<label>合计</label>
+				</div>
+      		</div>
+      		<div class="col-xs-4">
+      			<div class="checkbox-custom checkbox-inline">
+					<input type="checkbox" checked value="2" name="colIndex"> 
+					<label>已领凭证</label>
+				</div>
+      		</div>
+      		<div class="col-xs-4">
+      			<div class="checkbox-custom checkbox-inline">
+					<input type="checkbox" checked value="3" name="colIndex"> 
+					<label>资金来源</label>
+				</div>
+      		</div>
+		</div>
+		<hr>
+		<div class="text-right">
+			<button type="button" class="btn btn-primary" onclick="daoChu();">导出</button>
+		</div>
+		<form id="subDaoChu" action="../statistics/statisticsDaoChu.do" method="post"  style="display:none;">
+			<input type="hidden" name="daoChuAttrModel" id="daoChuAttrModel">
+			<input type="hidden" name="daoChuHead" id="daoChuHead">
+			<input type="hidden" name="daoChuData" id="daoChuData">
+		 </form>
+<script id="algorithmTemplate" type="text/x-handlebars-template">
+{{name}} {{num}} 人  ×  {{money}} 万元/人  =  {{countMoney}} 万元
+
+</script>
+		<script src="../assets/js/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="../assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+		<script src="../assets/plugins/maskedinput/js/jquery.maskedinput.js"></script>
+		<script src="../assets/js/date&timePicker.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../assets/js/core.min.js"></script>
+		<script src="../assets/js/URL.js"></script>
+		<script src="../assets/plugins/jqPaginator/handlebars-v4.0.5.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../assets/pageJs/statistics/statisticsInfoDaoChu.js" charset="UTF-8"></script>
+		<script type="text/javascript">
+			function daoChu(){
+				$.getJSON(sendUrl.statistics_getData,{
+					pageSize:1000,
+					pageIndex:1,
+					startDate:$("#startDate").val(),
+					endDate:$("#endDate").val()
+				},function(data){
+					var tempData = actionFormate(data, false);
+					if(!tempData || !tempData.datas || !tempData.datas.length){
+						tempData = {datas:[],totalCount:0};
+					}
+					var template = Handlebars.compile($("#algorithmTemplate").html());
+					for (var i = 0; i < tempData.datas.length; i++) {
+						var d = tempData.datas[i];
+						var moneyUnitMsg = template({
+							name:"拆迁人员",
+							num:d.totalPopu,
+							money:d.personalSubsidyStd,
+							countMoney:d.totalPopu * d.personalSubsidyStd
+						});
+						d.landBureauAmountMsg = moneyUnitMsg;
+						var onlyChildMsg =  template({
+							name:"独生子女",
+							num:d.onlyChildCount,
+							money:d.nonLrbStd,
+							countMoney:d.onlyChildCount * d.nonLrbStd
+						});
+						var halfMsg =  template({
+							name:"半边户",
+							num:d.halfCount,
+							money:d.nonLrbStd,
+							countMoney:d.halfCount * d.nonLrbStd
+						});
+						var notHalfMsg =  template({
+							name:"非半边户",
+							num:d.totalPopu - d.halfCount,
+							money:d.nonLrbStd,
+							countMoney:(d.totalPopu - d.halfCount) * d.nonLrbStd
+						});
+						d.nLandBureauAmountMsg = onlyChildMsg + halfMsg + notHalfMsg;
+					}
+					
+					var d = exportStatisticsExcel();
+					$("#daoChuHead").val(JSON.stringify(d.heads));
+					$("#daoChuAttrModel").val(JSON.stringify(d.keys));
+					$("#daoChuData").val(JSON.stringify(tempData.datas));
+					$("#subDaoChu").submit();
+				});
+			}
+			var date = new Date();
+			var year = date.getFullYear();
+			var month = date.getMonth();
+			var day = date.getDate();
+			var dateStr = year + "-" + month + "-" + day;
+			initPageDom();
+			function setTime(){
+				$("#startDate").val(window.parent.getParentStartDate());
+				$("#endDate").val(window.parent.getParentEndDate());
+			}
+		</script>
+  </body>
+</html>

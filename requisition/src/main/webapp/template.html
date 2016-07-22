@@ -1,0 +1,21 @@
+<link href="assets/vendor/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet" />
+<link href="assets/plugins/bootkit/css/bootkit.css" rel="stylesheet">
+<link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<div id="show_da_yin_area">
+</div>
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript">
+	function initDaYinHtml() {
+		$("#show_da_yin_area").html("");
+	}
+	function sendDaYinHtml(html) {
+		var div = $("<div>");
+		div.css("page-break-after", "always");
+		div.html(html);
+		$("#show_da_yin_area").append(div);
+	}
+	function printDom() {
+		window.print();
+	}
+</script>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tq.requisition.domain.model.account">
+
+    <class name="Account" table="tb_account">
+        <id name="id" column="id" type="org.hibernate.type.UUIDCharType">
+        	<generator class="assigned"></generator>
+        </id>
+		<property name="account" column="account" type="string" not-null="true" unique="true" />
+		<property name="pwd" column="pwd" type="string" not-null="true" />
+		<property name="name" column="name" type="string" not-null="false" />
+		<property name="deptId" column="dept_id" type="org.hibernate.type.UUIDCharType" />
+		<property name="orgId" column="org_id" type="org.hibernate.type.UUIDCharType" />
+		<property name="roleId" column="role_id" type="org.hibernate.type.UUIDCharType" />
+		<property name="state" column="state" type="integer" length="1"/>
+		
+		<!-- 映射账户状态枚举 -->
+		<!-- property name="state" length="30" not-null="true" column="state">
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.tq.requisition.domain.model.share.AccountState</param>
+				<param name="type">12</param>
+			</type>
+		</property -->		
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tq.requisition.domain.model.housePuraseTicket">
+
+    <class name="HousePuraseTicket" table="tb_housepurchase_ticket">
+        <id name="id" column="id" type="org.hibernate.type.UUIDCharType">
+        	<generator class="assigned"></generator>
+        </id>
+		<property name="bonus" column="bonus" type="float" not-null="true" />
+		<property name="makeDate" column="make_date" type="date" not-null="true" />
+		<property name="ticketNumber" column="ticket_number" length="50" type="string" not-null="true"  unique="true"/>
+		<property name="idNumber" column="id_number" length="20" type="string" not-null="true"  />
+		<property name="del" column="is_del" length="50" type="boolean" not-null="true"  />
+		<property name="name" column="name" length="50" type="string" not-null="true"  />
+		<property name="fmlItemId" column="fml_item_id" length="70" type="org.hibernate.type.UUIDCharType" not-null="true"  />
+		<property name="createUId" column="create_uId" length="70" type="string" />
+		<property name="createDate" column="create_date" type="date" />
+		
+		<!-- 购房券状态枚举 -->
+		<property name="state" length="30" not-null="true" column="ticket_state_id">
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.tq.requisition.domain.model.share.TicketState</param>
+				<param name="type">12</param>
+			</type>
+		</property>		
+    </class>
+
+</hibernate-mapping>

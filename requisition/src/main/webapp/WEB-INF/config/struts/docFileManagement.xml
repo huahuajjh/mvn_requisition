@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+"http://struts.apache.org/dtds/struts-2.0.dtd" >
+<struts>
+	<package name="docFileManagement" extends="loginInterceptor" namespace="/docFileManagement">
+		
+		<action name="fileMList" class="com.tq.requisition.presentation.actions.docFileManagement.FileMList">
+			<result name="success">../WEB-INF/view/docFileManagement/fileMList.jsp</result>
+		</action>
+		<action name="fileMListList" method="list" class="com.tq.requisition.presentation.actions.docFileManagement.FileMList"></action>
+		<action name="fileMListGet" method="get" class="com.tq.requisition.presentation.actions.docFileManagement.FileMList"></action>
+		<action name="fileMListGetType" method="getType" class="com.tq.requisition.presentation.actions.docFileManagement.FileMList"></action>
+	
+		<action name="fileMListAdd" class="com.tq.requisition.presentation.actions.docFileManagement.FileMListAdd">
+			<result name="success">../WEB-INF/view/docFileManagement/fileMListAdd.jsp</result>
+		</action>
+		<action name="fileMListAddAdd" method="add" class="com.tq.requisition.presentation.actions.docFileManagement.FileMListAdd"></action>
+		
+		<action name="fileMListInfo" class="com.tq.requisition.presentation.actions.docFileManagement.FileMList">
+			<result name="success">../WEB-INF/view/docFileManagement/fileMListInfo.jsp</result>
+		</action>
+		
+		<action name="fileMListMsg" class="com.tq.requisition.presentation.actions.docFileManagement.FileMListMsg">
+			<result name="success">../WEB-INF/view/docFileManagement/fileMListMsg.jsp</result>
+		</action>
+		<action name="fileMListMsgGet" method="get" class="com.tq.requisition.presentation.actions.docFileManagement.FileMListMsg"></action>
+		<action name="fileMListMsgList" method="list" class="com.tq.requisition.presentation.actions.docFileManagement.FileMListMsg"></action>
+		<action name="fileMListMsgEdit" method="edit" class="com.tq.requisition.presentation.actions.docFileManagement.FileMListMsg"></action>
+		<action name="fileMListMsgDelete" method="delete" class="com.tq.requisition.presentation.actions.docFileManagement.FileMListMsg"></action>
+	
+	</package>
+</struts>

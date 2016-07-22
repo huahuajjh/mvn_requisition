@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+		<!-- 组织管理相关 -->
+		<!-- 删除组织领域服务(领域服务层) -->
+		<bean id="removeOrgDomain" class="com.tq.requisition.domain.service.domainserviceimpl.OrgRemoveServiceImpl">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+			<constructor-arg index="1" ref="orgRepository"/>
+			<constructor-arg index="2" ref="deptRepository"/>
+			<constructor-arg index="3" ref="accountRepository"/>
+		</bean>
+		
+		<!-- 组织管理服务(应用层) -->
+		<bean id="orgMgtService" class="com.tq.requisition.application.sysManagement.OrgMgtServiceImpl">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+			<constructor-arg index="1" ref="orgRepository"/>
+			<constructor-arg index="2" ref="removeOrgDomain"/>
+		</bean>
+				
+		<!-- 部门管理服务(领域服务层) -->
+		<bean id="deptMgtDomainService" class="com.tq.requisition.domain.service.domainserviceimpl.DeptRemoveServiceImpl">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+			<constructor-arg index="1" ref="accountRepository"/>
+			<constructor-arg index="2" ref="deptRepository"/>
+		</bean>
+		
+		<!-- 部门操作相关实现类 -->
+		<bean id="deptService" class="com.tq.requisition.application.sysManagement.DeptMgtServiceImpl">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+			<constructor-arg index="1" ref="deptRepository"/>
+			<constructor-arg index="2" ref="deptMgtDomainService"/>
+		</bean>
+		
+</beans>

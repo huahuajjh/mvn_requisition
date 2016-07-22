@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+"http://struts.apache.org/dtds/struts-2.0.dtd" >
+<struts>
+	<package name="projectManagement" extends="loginInterceptor" namespace="/projectManagement">
+	
+		<!-- 新增项目 -->
+		<action name="pmAddPro" class="com.tq.requisition.presentation.actions.projectManagement.PmAddPro">
+			<result name="success">
+				../WEB-INF/view/projectManagement/pmAddPro.jsp
+			</result>
+		</action>
+		<action name="pmAddProAdd" class="com.tq.requisition.presentation.actions.projectManagement.PmAddPro" method="add"></action>
+		<action name="pmAddProUpFile" class="com.tq.requisition.presentation.actions.projectManagement.PmAddPro" method="upFile"></action>
+		
+		<!-- 项目进度管理 -->
+		<action name="pmProgress" class="com.tq.requisition.presentation.actions.projectManagement.PmProgress">
+			<result name="success">
+				../WEB-INF/view/projectManagement/pmProgress.jsp
+			</result>
+		</action>
+		<action name="pmProgressList" method="list" class="com.tq.requisition.presentation.actions.projectManagement.PmProgress"></action>
+		<action name="pmProgressGet" method="get" class="com.tq.requisition.presentation.actions.projectManagement.PmProgress"></action>
+		<action name="pmProgressNames" method="names" class="com.tq.requisition.presentation.actions.projectManagement.PmProgress"></action>
+		<action name="pmProgressInfo" method="info" class="com.tq.requisition.presentation.actions.projectManagement.PmProgress"></action>
+		<action name="pmProgressInputMouth" method="inputMouth" class="com.tq.requisition.presentation.actions.projectManagement.PmProgress"></action>
+		<action name="pmProgressGetAnnouncement" method="getAnnouncement" class="com.tq.requisition.presentation.actions.projectManagement.PmProgress"></action>
+		<action name="pmProgressAddAnnouncement" method="addAnnouncement" class="com.tq.requisition.presentation.actions.projectManagement.PmProgress"></action>
+		<action name="pmProgressEditAnnouncement" method="editAnnouncement" class="com.tq.requisition.presentation.actions.projectManagement.PmProgress"></action>
+		<action name="pmProgressEditMouth" method="editMouth" class="com.tq.requisition.presentation.actions.projectManagement.PmProgress"></action>
+		<action name="pmProgressDaYin" method="daYin" class="com.tq.requisition.presentation.actions.projectManagement.PmProgress"></action>
+		<action name="pmProgressDaoChu" method="daoChu" class="com.tq.requisition.presentation.actions.projectManagement.PmProgress">  
+		    <result name="success" type="stream">  
+		        <param name="contentType">application/vnd.ms-excel</param>  
+		        <param name="contentDisposition">attachment; filename="${downloadChineseFileName}.xlsx"</param>  
+		        <param name="inputName">outputStream</param>  
+		    </result>  
+		</action>
+		
+		<!-- 项目台账 -->
+		<action name="pmQueryPro" class="com.tq.requisition.presentation.actions.projectManagement.PmQueryPro">
+			<result name="success">
+				../WEB-INF/view/projectManagement/pmQueryPro.jsp
+			</result>
+		</action>
+		<action name="pmQueryProList" method="list" class="com.tq.requisition.presentation.actions.projectManagement.PmQueryPro"></action>
+		<action name="pmQueryProEdit" method="edit" class="com.tq.requisition.presentation.actions.projectManagement.PmQueryPro"></action>
+		<action name="pmQueryProDelete" method="delete" class="com.tq.requisition.presentation.actions.projectManagement.PmQueryPro"></action>
+		
+		<!-- 维护项目 -->
+		<action name="pmMaintain" class="com.tq.requisition.presentation.actions.projectManagement.PmMaintain">
+			<result name="success">
+				../WEB-INF/view/projectManagement/pmMaintain.jsp
+			</result>
+		</action>
+		<action name="pmMaintainList" method="list" class="com.tq.requisition.presentation.actions.projectManagement.PmMaintain"></action>
+		
+		<!--  拆迁户人员信息台账 -->
+		<action name="listRemoved" class="com.tq.requisition.presentation.actions.projectManagement.ListRemoved">
+			<result name="success">
+				../WEB-INF/view/projectManagement/listRemoved.jsp
+			</result>
+		</action>
+		<action name="listRemovedList" method="list" class="com.tq.requisition.presentation.actions.projectManagement.ListRemoved"></action>
+		<action name="listRemovedEdit" method="edit" class="com.tq.requisition.presentation.actions.projectManagement.ListRemoved"></action>
+		<action name="listRemovedGet" method="get" class="com.tq.requisition.presentation.actions.projectManagement.ListRemoved"></action>
+		
+		<!--  维护拆迁户人员信息 -->
+		<action name="maintainPersonRemove" class="com.tq.requisition.presentation.actions.projectManagement.MaintainPersonRemove">
+			<result name="success">
+				../WEB-INF/view/projectManagement/maintainPersonRemove.jsp
+			</result>
+		</action>
+		<action name="maintainPersonRemoveList" method="list" class="com.tq.requisition.presentation.actions.projectManagement.MaintainPersonRemove"></action>
+		
+		<!--  拆迁户户信息台账 -->
+		<action name="queryRemoveInfo" class="com.tq.requisition.presentation.actions.projectManagement.QueryRemoveInfo">
+			<result name="success">
+				../WEB-INF/view/projectManagement/queryRemoveInfo.jsp
+			</result>
+		</action>
+		<action name="queryRemoveInfoList" method="list" class="com.tq.requisition.presentation.actions.projectManagement.QueryRemoveInfo"></action>
+		<action name="queryRemoveInfoGetRemoveInfos" method="getRemoveInfos" class="com.tq.requisition.presentation.actions.projectManagement.QueryRemoveInfo"></action>
+		<action name="queryRemoveInfoEdit" method="edit" class="com.tq.requisition.presentation.actions.projectManagement.QueryRemoveInfo"></action>
+		<action name="queryRemoveInfoAddRemoveInfo" method="addRemoveInfo" class="com.tq.requisition.presentation.actions.projectManagement.QueryRemoveInfo"></action>
+		<action name="queryRemoveInfoDaYin" method="daYin" class="com.tq.requisition.presentation.actions.projectManagement.QueryRemoveInfo"></action>
+		
+		<!--  维护拆迁户户信息 -->
+		<action name="maintainRemove" class="com.tq.requisition.presentation.actions.projectManagement.MaintainRemove">
+			<result name="success">
+				../WEB-INF/view/projectManagement/maintainRemove.jsp
+			</result>
+		</action>
+		<action name="maintainRemoveList" method="list" class="com.tq.requisition.presentation.actions.projectManagement.MaintainRemove"></action>
+		<action name="maintainRemoveDelete" method="delete" class="com.tq.requisition.presentation.actions.projectManagement.MaintainRemove"></action>
+		
+		<!--  录入拆迁户信息 -->
+		<action name="uploadRemoveInfo" class="com.tq.requisition.presentation.actions.projectManagement.UploadRemoveInfo">
+			<result name="success">
+				../WEB-INF/view/projectManagement/uploadRemoveInfo.jsp
+			</result>
+		</action>
+		<action name="uploadRemoveInfoAdd"  method="add" class="com.tq.requisition.presentation.actions.projectManagement.UploadRemoveInfo"></action>
+		<action name="uploadRemoveInfoUpFile"  method="upFile" class="com.tq.requisition.presentation.actions.projectManagement.UploadRemoveInfo"></action>
+		
+	</package>
+</struts>

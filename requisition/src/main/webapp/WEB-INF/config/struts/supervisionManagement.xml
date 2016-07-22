@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+"http://struts.apache.org/dtds/struts-2.0.dtd" >
+<struts>
+	<package name="supervisionManagement" extends="loginInterceptor" namespace="/supervisionManagement">
+		
+		<action name="infoSummary" class="com.tq.requisition.presentation.actions.supervisionManagement.InfoSummary">
+			<result name="success">../WEB-INF/view/supervisionManagement/infoSummary.jsp</result>
+		</action>
+		
+		<action name="infoSummaryGetPersonsAtHeadId" method="getPersonsAtHeadId" class="com.tq.requisition.presentation.actions.supervisionManagement.InfoSummary"></action>
+		<action name="infoSummaryZhuanHuMsg" method="zhuanHuMsg" class="com.tq.requisition.presentation.actions.supervisionManagement.InfoSummary"></action>
+		<action name="infoSummarySheBaoMsg" method="sheBaoMsg" class="com.tq.requisition.presentation.actions.supervisionManagement.InfoSummary"></action>
+		<action name="infoSummaryGouFangQuanMsg" method="gouFangQuanMsg" class="com.tq.requisition.presentation.actions.supervisionManagement.InfoSummary"></action>
+		
+	</package>
+</struts>

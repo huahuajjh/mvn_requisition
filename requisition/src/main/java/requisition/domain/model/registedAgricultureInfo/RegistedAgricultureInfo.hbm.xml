@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tq.requisition.domain.model.registedAgricultureInfo">
+
+    <class name="RegistedAgricultureInfo" table="tb_registed_argc_info">
+        <id name="id" column="id" type="org.hibernate.type.UUIDCharType">
+        	<generator class="assigned"></generator>
+        </id>
+		<property name="address" column="address" type="string" not-null="true" length="120" />
+		<property name="idNumber" column="idNumber" type="string" not-null="true"  length="20"/>
+		<property name="isRemove" column="is_removed"  type="boolean" />
+		<property name="isSetting" column="is_settled" type="boolean" />
+		<property name="isSocialSecurity" column="is_socialsecurity" type="boolean" />
+		<property name="isTransfer" column="is_transferd" type="boolean" />
+		<property name="name" column="name" type="string" not-null="true"/>
+		<property name="policyStateId" column="policy_state_id" type="org.hibernate.type.UUIDCharType" />
+		<property name="userStateId" column="user_state_id" type="org.hibernate.type.UUIDCharType" />
+		<property name="userStateStr" column="user_state_str" type="string"  length="30"/>
+		<property name="policyStr" column="policy_str" type="string"  length="50"/>
+    </class>
+
+</hibernate-mapping>

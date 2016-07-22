@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.action.excludePattern" value="uploadFile"/>
+	<constant name="struts.multipart.maxSize" value="20480000"/>
+	<constant name="struts.action.extension" value="do"/>
+	<include file="../config/closeSessionInterceptor.xml"></include>
+	<include file="../config/loginInterceptor.xml"></include>
+	
+	<package name="requisition_land" extends="loginInterceptor"  namespace="/">
+		<action name="index" class="com.tq.requisition.presentation.actions.Index">
+			<result name="success">/WEB-INF/view/index.jsp</result>
+		</action>
+		<action name="leftAndTop" class="com.tq.requisition.presentation.actions.share.LeftAndTop">
+			<result name="success">/WEB-INF/view/share/leftAndTop.jsp</result>
+		</action>
+		<action name="editPassword" method="editPassword" class="com.tq.requisition.presentation.actions.Index"></action>
+		<action name="getRes" class="com.tq.requisition.presentation.actions.Index"  method="getRes"></action>
+	</package>
+	
+	<include file="../config/struts/management.xml"></include>
+	<include file="../config/struts/projectManagement.xml"></include>
+	<include file="../config/struts/transferAccountManagement.xml"></include>
+	<include file="../config/struts/socialSecurityMansgement.xml"></include>
+	<include file="../config/struts/housePurchaseMansgement.xml"></include>
+	<include file="../config/struts/docFileManagement.xml"></include>
+	<include file="../config/struts/statistics.xml"></include>
+	<include file="../config/struts/registedInfoManagement.xml"></include>
+	<include file="../config/struts/removedDocManagement.xml"></include>
+	<include file="../config/struts/messageManagement.xml"></include>
+	<include file="../config/struts/supervisionManagement.xml"></include>
+	<include file="../config/struts/onekeyQuery.xml"></include>
+	<include file="../config/struts/share.xml"></include>
+</struts>

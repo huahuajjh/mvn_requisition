@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+"http://struts.apache.org/dtds/struts-2.0.dtd" >
+<struts>
+	<package name="housePurchaseMansgement" extends="loginInterceptor"
+		namespace="/housePurchaseMansgement">
+
+		<!-- 录入购房券信息 -->
+		<action name="hptAdd"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptAdd">
+			<result name="success">../WEB-INF/view/housePurchaseMansgement/hptAdd.jsp
+			</result>
+		</action>
+		<action name="hptAddGet" method="get"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptAdd"></action>
+		<action name="hptAddAdd" method="add"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptAdd"></action>
+		<action name="hptAddUpFile" method="upFile"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptAdd"></action>
+		<action name="hptAddAddFmlItem" method="addFmlItem"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptAdd"></action>
+		<action name="hptAddAddFmlItemAndHpt" method="addFmlItemAndHpt"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptAdd"></action>
+
+		<!-- 购房券换发 -->
+		<action name="hptExchange"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptExchange">
+			<result name="success">../WEB-INF/view/housePurchaseMansgement/hptExchange.jsp
+			</result>
+		</action>
+		<action name="hptExchangeGet" method="get"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptExchange"></action>
+		<action name="hptExchangeAdd" method="add"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptExchange"></action>
+
+		<!-- 购房券户信息台账 -->
+		<action name="hptHousehold"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptHousehold">
+			<result name="success">../WEB-INF/view/housePurchaseMansgement/hptHousehold.jsp
+			</result>
+		</action>
+
+		<!-- 购房卷挂失/补券 -->
+		<action name="hptLossAndMend"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptLossAndMend">
+			<result name="success">../WEB-INF/view/housePurchaseMansgement/hptLossAndMend.jsp
+			</result>
+		</action>
+		<action name="hptLossAndMendGet" method="get"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptLossAndMend"></action>
+		<action name="hptLossAndMendGuaShi" method="guaShi"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptLossAndMend"></action>
+		<action name="hptLossAndMendBuShi" method="buShi"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptLossAndMend"></action>
+
+		<!-- 购房卷人员信息台账 -->
+		<action name="hptPerson"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptPerson">
+			<result name="success">../WEB-INF/view/housePurchaseMansgement/hptPerson.jsp
+			</result>
+		</action>
+
+		<!-- 购房券发放 -->
+		<action name="hptSet"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptSet">
+			<result name="success">../WEB-INF/view/housePurchaseMansgement/hptSet.jsp
+			</result>
+		</action>
+		<action name="hptSetGet" method="get"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptSet"></action>
+		<action name="hptSetAdd" method="add"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptSet"></action>
+
+		<!-- 购房券按项目发放 -->
+		<action name="hptSetPro"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptSetPro">
+			<result name="success">../WEB-INF/view/housePurchaseMansgement/hptSetPro.jsp
+			</result>
+		</action>
+		<action name="hptSetProList" method="list"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptSetPro"></action>
+
+		<!-- 购房券发放 -->
+		<action name="hptSetPerson"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptSetPerson">
+			<result name="success">../WEB-INF/view/housePurchaseMansgement/hptSetPerson.jsp
+			</result>
+		</action>
+		<action name="hptSetPersonGet" method="get"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptSetPerson"></action>
+		<action name="hptSetPersonAdd" method="add"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptSetPerson"></action>
+
+		<!-- 购房券的使用与兑现 -->
+		<action name="hptUseAndCash"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptUseAndCash">
+			<result name="success">../WEB-INF/view/housePurchaseMansgement/hptUseAndCash.jsp
+			</result>
+		</action>
+		<action name="hptUseAndCashGet" method="get"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptUseAndCash"></action>
+		<action name="hptUseAndCashAdd" method="add"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptUseAndCash"></action>
+
+		<!-- 购房券的兑付台账 -->
+		<action name="hptExchangeBill"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptExchangeBill">
+			<result name="success">../WEB-INF/view/housePurchaseMansgement/hptExchangeBill.jsp
+			</result>
+		</action>
+		<action name="hptExchangeBillList" method="list"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptExchangeBill"></action>
+
+		<!-- 购房券的发放台账 -->
+		<action name="hptIssue"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptIssue">
+			<result name="success">../WEB-INF/view/housePurchaseMansgement/hptIssue.jsp
+			</result>
+		</action>
+		<action name="hptIssueList" method="list"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptIssue"></action>
+		<action name="hptIssueDaoChu" method="daoChu"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptIssue">
+			<result name="success" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="contentDisposition">attachment;
+					filename="${downloadChineseFileName}.xlsx"</param>
+				<param name="inputName">outputStream</param>
+			</result>
+		</action>
+
+		<!-- 批量购房券使用与兑现 -->
+		<action name="hptBatchUseAndCash"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptBatchUseAndCash">
+			<result name="success">../WEB-INF/view/housePurchaseMansgement/hptBatchUseAndCash.jsp
+			</result>
+		</action>
+		<action name="hptBatchUseAndCashList" method="list"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptBatchUseAndCash"></action>
+		<action name="hptBatchUseAndCashProcessing" method="processing"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptBatchUseAndCash"></action>
+
+		<!-- 设置项目出资单位 -->
+		<action name="hptProjectMoneyUnit"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptProjectMoneyUnit">
+			<result name="success">../WEB-INF/view/housePurchaseMansgement/hptProjectMoneyUnit.jsp
+			</result>
+		</action>
+		<action name="hptProjectMoneyUnitGet" method="get"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptProjectMoneyUnit"></action>
+		<action name="hptProjectMoneyUnitEdit" method="edit"
+			class="com.tq.requisition.presentation.actions.housePurchaseMansgement.HptProjectMoneyUnit"></action>
+
+	</package>
+</struts>
+		

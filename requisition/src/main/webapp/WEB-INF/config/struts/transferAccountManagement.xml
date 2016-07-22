@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+"http://struts.apache.org/dtds/struts-2.0.dtd" >
+<struts>
+	<package name="transferAccountManagement" extends="loginInterceptor"
+		namespace="/transferAccountManagement">
+		
+		<!--  录入拆迁户信息 -->
+		<action name="taImportFile" class="com.tq.requisition.presentation.actions.transferAccountManagement.TaImportFile">
+			<result name="success">
+				../WEB-INF/view/transferAccountManagement/taImportFile.jsp
+			</result>
+		</action>
+		<action name="taImportFileGet" method="get" class="com.tq.requisition.presentation.actions.transferAccountManagement.TaImportFile"></action>
+		<action name="taImportFileAdd" method="add" class="com.tq.requisition.presentation.actions.transferAccountManagement.TaImportFile"></action>
+		
+		<!--  批量处理转户信息 -->
+		<action name="taInfoBatch" class="com.tq.requisition.presentation.actions.transferAccountManagement.TaInfoBatch">
+			<result name="success">
+				../WEB-INF/view/transferAccountManagement/taInfoBatch.jsp
+			</result>
+		</action>
+		<action name="taInfoBatchList" method="list" class="com.tq.requisition.presentation.actions.transferAccountManagement.TaInfoBatch"></action>
+		<action name="taInfoBatchAdd" method="add" class="com.tq.requisition.presentation.actions.transferAccountManagement.TaInfoBatch"></action>
+		
+		<!--  维护转户信息 -->
+		<action name="taManagement" class="com.tq.requisition.presentation.actions.transferAccountManagement.TaManagement">
+			<result name="success">
+				../WEB-INF/view/transferAccountManagement/taManagement.jsp
+			</result>
+		</action>
+		
+		<!--  查询转户台账 -->
+		<action name="taQuery" class="com.tq.requisition.presentation.actions.transferAccountManagement.TaQuery">
+			<result name="success">
+				../WEB-INF/view/transferAccountManagement/taQuery.jsp
+			</result>
+		</action>
+		<action name="taQueryList" method="list" class="com.tq.requisition.presentation.actions.transferAccountManagement.TaQuery"></action>
+		<action name="taQueryEdit" method="edit" class="com.tq.requisition.presentation.actions.transferAccountManagement.TaQuery"></action>
+		
+	</package>
+</struts>

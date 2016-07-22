@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+"http://struts.apache.org/dtds/struts-2.0.dtd" >
+<struts>
+	<package name="removedDocManagement" extends="loginInterceptor" namespace="/removedDocManagement">
+	
+		<action name="removedInfoAdd" class="com.tq.requisition.presentation.actions.removedDocManagement.RemovedInfoAdd">
+			<result name="success">../WEB-INF/view/removedDocManagement/removedInfoAdd.jsp</result>
+		</action>
+		<action name="removedInfoAddadd" method="add" class="com.tq.requisition.presentation.actions.removedDocManagement.RemovedInfoAdd"></action>
+		<action name="removedInfoAddUpFile" method="upFile" class="com.tq.requisition.presentation.actions.removedDocManagement.RemovedInfoAdd"></action>
+		
+		<action name="removedInfoQuery" class="com.tq.requisition.presentation.actions.removedDocManagement.RemovedInfoQuery">
+			<result name="success">../WEB-INF/view/removedDocManagement/removedInfoQuery.jsp</result>
+		</action>
+		<action name="removedInfoQuerylist" method="list" class="com.tq.requisition.presentation.actions.removedDocManagement.RemovedInfoQuery"></action>
+		<action name="removedInfoQueryedit" method="edit" class="com.tq.requisition.presentation.actions.removedDocManagement.RemovedInfoQuery"></action>
+		<action name="removedInfoQuerydelete" method="delete" class="com.tq.requisition.presentation.actions.removedDocManagement.RemovedInfoQuery"></action>
+		<action name="removedInfoQueryDaoChu" method="daoChu" class="com.tq.requisition.presentation.actions.removedDocManagement.RemovedInfoQuery">  
+		    <result name="success" type="stream">  
+		        <param name="contentType">application/vnd.ms-excel</param>  
+		        <param name="contentDisposition">attachment; filename="${downloadChineseFileName}.xlsx"</param>  
+		        <param name="inputName">outputStream</param>  
+		    </result>  
+		</action>
+		
+		<action name="removedInfoMaintain" class="com.tq.requisition.presentation.actions.removedDocManagement.RemovedInfoMaintain">
+			<result name="success">../WEB-INF/view/removedDocManagement/removedInfoMaintain.jsp</result>
+		</action>
+		
+	</package>
+</struts>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+		<!-- 购房券管理仓储 -->
+		<bean id="hptRepository" class="com.tq.requisition.infrastructure.Repository.HPT.HPTRepository">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+		</bean>
+		
+		<!-- 购房券管理领域服务 -->
+		<bean id="hptDomainService" class="com.tq.requisition.domain.service.HPTServuceImpl.HPTServiceImpl">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+			<constructor-arg index="1" ref="fmlItemRepository"/>
+			<constructor-arg index="2" ref="hptRepository"/>
+		</bean>
+		
+		<!-- 购房券管理契约服务(应用层) -->
+		<bean id="hptService" class="com.tq.requisition.application.hpt.HPTMgtServiceImpl">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+			<constructor-arg index="1" ref="hptRepository"/>
+			<constructor-arg index="2" ref="hptDomainService"/>
+			<constructor-arg index="3" ref="fmlItemRepository"/>
+		</bean>
+		
+				<!-- 购房券管理契约服务(应用层) -->
+		<bean id="hptFmlItemService" class="com.tq.requisition.application.hpt.HPTMgtFmlItemServiceImpl">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+			<constructor-arg index="1" ref="hptRepository"/>
+			<constructor-arg index="2" ref="fmlItemRepository"/>
+			<constructor-arg index="3" ref="fmlRepository"/>
+		</bean>
+</beans>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+		<!-- 授权相关的配置 -->
+		<!-- 授权领域服务类 -->
+		<bean id="pmsServiceDomain" class="com.tq.requisition.domain.service.domainserviceimpl.PermissionService">
+			<constructor-arg index="0" ref="roleAccRepository"/>
+			<constructor-arg index="1" ref="resRoleRepository"/>
+			<constructor-arg index="2" ref="hbRepositoryContext"/>
+			<constructor-arg index="3" ref="resourceRepository"/>
+		</bean>
+		
+		<!-- 授权服务 -->
+		<bean id="pmsService" class="com.tq.requisition.application.sysManagement.PermissionServiceImpl">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+			<constructor-arg index="1" ref="pmsServiceDomain"/>
+		</bean>
+		
+		<!-- 获取资源服务 -->
+		<bean id="getResDomainService" class="com.tq.requisition.domain.service.domainserviceimpl.GetResServiceImpl">
+			<constructor-arg index="0" ref="resRoleRepository"/>
+			<constructor-arg index="1" ref="resourceRepository"/>
+			<constructor-arg index="2" ref="accountRepository"/>
+		</bean>
+		
+		<bean id="getResService" class="com.tq.requisition.application.sysManagement.GetResServiceImpl">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+			<constructor-arg index="1" ref="getResDomainService"/>
+		</bean>
+		
+</beans>

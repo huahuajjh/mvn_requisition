@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tq.requisition.domain.model.housePuraseTicket">
+
+    <class name="HPTMendInfo" table="tb_ticket_mend">
+        <id name="id" column="id" type="org.hibernate.type.UUIDCharType">
+        	<generator class="assigned"></generator>
+        </id>
+		<property name="mendDate" column="mend_date" type="date"  not-null="true" />
+		<property name="oprDate" column="opr_date" type="date" not-null="true" />
+		<property name="oprUserId" column="opr_user" length="70" type="org.hibernate.type.UUIDCharType" not-null="true" />
+		<property name="ticketId" column="ticket_id"  type="org.hibernate.type.UUIDCharType" length="70" not-null="true" />
+		<property name="onwerId" column="owner"  type="org.hibernate.type.UUIDCharType" length="70" not-null="true"  />
+		<property name="del" column="is_del"  type="boolean" not-null="true" />
+
+    </class>
+
+</hibernate-mapping>

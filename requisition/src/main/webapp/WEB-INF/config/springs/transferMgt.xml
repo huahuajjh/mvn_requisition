@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+		<!-- 转户信息仓储 -->
+		<bean id="transferRepository" class="com.tq.requisition.infrastructure.Repository.transferMgt.TransferMgtRepository">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+		</bean>
+		
+		<!-- 转户领域服务 -->
+		<bean id="transferDomainService" class="com.tq.requisition.domain.service.transferMgt.TransferMgtServiceImpl">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+			<constructor-arg index="1" ref="transferRepository"/>
+			<constructor-arg index="2" ref="fmlItemRepository"/>
+		</bean>
+		
+		<!-- 转户应用层服务 -->
+		<bean id="transferService" class="com.tq.requisition.application.transferMgt.TransferMgtServiceImpl">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+			<constructor-arg index="1" ref="transferRepository"/>
+			<constructor-arg index="2" ref="transferDomainService"/>
+		</bean>
+</beans>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+		
+		<!-- hibernate仓储上下文映射，获取hibernate上下文的封装对象 -->
+		<bean id="hbRepositoryContext" class="com.tq.requisition.infrastructure.Repository.HbRepositoryContext"></bean>
+		
+		<!-- hibernate仓储 -->
+		<bean id="hbRepository" class="com.tq.requisition.infrastructure.Repository.HbRepository">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+		</bean>
+		
+		<!-- 账户仓储 -->
+		<bean id="accountRepository" class="com.tq.requisition.infrastructure.Repository.account.AccountRepository">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>			
+		</bean>
+		
+		<!-- 角色仓储 -->
+		<bean id="roleRepository" class="com.tq.requisition.infrastructure.Repository.role.RoleRepository">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+		</bean>
+		
+		<!-- 组织仓储 -->
+		<bean id="orgRepository" class="com.tq.requisition.infrastructure.Repository.organization.OrganizationRepository">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+		</bean>
+		
+		<!-- 部门仓储 -->
+		<bean id="deptRepository" class="com.tq.requisition.infrastructure.Repository.department.DepartmentRepository">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+		</bean>
+		
+		<!-- 角色账户关系仓储 -->
+		<bean id="roleAccRepository" class="com.tq.requisition.infrastructure.Repository.roleAccount.RoleAccountRepository">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+		</bean>
+		
+		<!-- 资源仓储 -->
+		<bean id="resourceRepository" class="com.tq.requisition.infrastructure.Repository.resource.ResourceRepository">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+		</bean>
+		
+		<!-- 资源角色仓储 -->
+		<bean id="resRoleRepository" class="com.tq.requisition.infrastructure.Repository.resRole.ResRoleRepository">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+		</bean>
+		
+		<!-- 地址仓储 -->
+		<bean id="addressRepository" class="com.tq.requisition.infrastructure.Repository.address.AddressRepository">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+		</bean>
+		
+		
+		<!-- ======================================================================== -->
+	
+		
+		<!-- 业务接口契约 -->
+		<!-- 用户相关实现类 -->
+		<bean id="userService" class="com.tq.requisition.application.userAssociatedImpl.UserServiceImpl">
+			<constructor-arg index="0" ref="accountRepository"/>
+		</bean>
+		
+		<!-- 账户操作相关实现类 -->
+		<bean id="accountService" class="com.tq.requisition.application.sysManagement.AccountServiceImpl">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+			<constructor-arg index="1" ref="accountRepository"/>
+			<constructor-arg index="2" ref="deptRepository"/>
+			<constructor-arg index="3" ref="orgRepository"/>
+			<constructor-arg index="4" ref="roleAccRepository"/>
+		</bean>
+		
+		<!-- 角色操作相关实现类 -->
+		<bean id="roleService" class="com.tq.requisition.application.sysManagement.RoleServiceImpl">
+			<constructor-arg index="0" ref="roleRepository"/>
+			<constructor-arg index="1" ref="accountRepository"/>
+			<constructor-arg index="2" ref="hbRepositoryContext"/>
+		</bean>
+		
+		<!-- 地址服務操作 -->
+		<bean id="addressService" class="com.tq.requisition.application.share.AddressServiceContractImpl">
+			<constructor-arg index="0" ref="hbRepositoryContext"/>
+			<constructor-arg index="1" ref="addressRepository"/>
+		</bean>
+		
+		
+		<!-- 授权服务spring配置文件 -->
+		<import resource="springs/permission.xml"/>
+		
+		<!-- 部门和组织管理spring配置文件 -->
+		<import resource="springs/org.xml"/>
+		
+		<!-- 项目管理spring配置文件 -->
+		<import resource="springs/project.xml"/>
+		
+		<!-- 类型字段spring配置文件 -->
+		<import resource="springs/share.xml"/>
+		
+		<!-- 拆迁户spring配置文件 -->
+		<import resource="springs/family.xml"/>
+		
+		<!-- 转户spring配置文件 -->
+		<import resource="springs/transferMgt.xml"/>
+		
+		<!-- 社保spring配置文件 -->
+		<import resource="springs/socialsecurity.xml"/>
+		
+		<!-- 社保spring配置文件 -->
+		<import resource="springs/hpt.xml"/>
+		
+		<!-- 已迁户人员配置文件 -->
+		<import resource="springs/removeinfoAndregistedagric.xml"/>
+</beans>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+"http://struts.apache.org/dtds/struts-2.0.dtd" >
+<struts>
+	<package name="share" extends="closeSessionInterceptor" namespace="/share">
+		
+		<!-- 获取街道下面的社区 -->
+		<action name="address"
+			class="com.tq.requisition.presentation.actions.share.Address"
+			method="listById"></action>
+			
+			<!-- 上传文件 -->
+		<action name="updateFile"
+			class="com.tq.requisition.presentation.actions.share.FileUploade"
+			method="updateFile"></action>
+			
+		<!-- 获取政策法规类型 -->
+		<action name="docFileType"
+			class="com.tq.requisition.presentation.actions.share.DocFileType"
+			method="list"></action>
+			
+		<!-- 保存base64文件 -->
+		<action name="saveFile"
+			class="com.tq.requisition.presentation.actions.share.FileUploade"
+			method="saveFile"></action>
+			
+		<!-- 人员信息 -->
+		<action name="personInfo" class="com.tq.requisition.presentation.actions.share.PersonInfo">
+			<result name="success">../WEB-INF/view/share/personInfo.jsp</result>
+		</action>
+		
+		<!-- 项目信息 -->
+		<action name="projectInfo" class="com.tq.requisition.presentation.actions.share.ProjectInfo">
+			<result name="success">../WEB-INF/view/share/projectInfo.jsp</result>
+		</action>
+		
+		<!-- 项目列表 -->
+		<action name="projectList" class="com.tq.requisition.presentation.actions.share.ProjectList">
+			<result name="success">../WEB-INF/view/share/projectList.jsp</result>
+		</action>
+		
+		<!-- 人员列表 -->
+		<action name="personList" class="com.tq.requisition.presentation.actions.share.PersonList">
+			<result name="success">../WEB-INF/view/share/personList.jsp</result>
+		</action>
+		
+		<!-- 户列表 -->
+		<action name="huList" class="com.tq.requisition.presentation.actions.share.HuList">
+			<result name="success">../WEB-INF/view/share/huList.jsp</result>
+		</action>
+		<action name="huListList" method="list" class="com.tq.requisition.presentation.actions.share.HuList"></action>
+		
+			<!-- 拍照 -->
+		<action name="photographs" class="com.tq.requisition.presentation.actions.share.Photographs">
+			<result name="success">../WEB-INF/view/share/photographs.jsp</result>
+		</action>
+		
+		<!-- 登陆 -->
+		<action name="login" class="com.tq.requisition.presentation.actions.Index"  method="login"></action>
+		
+	</package>
+</struts>

@@ -1,0 +1,61 @@
+﻿/*右左侧澳导航菜单li标签的伪事件样式*/
+.toggle li:hover{
+	background-color:purple;
+}
+
+.workArea{
+	width:90%;
+	margin:0 auto;
+}
+
+.uploadDiv{
+	height:34px;
+	border:solid 1px;
+	border-color:#999999;
+	background-color:#ffffff;
+	box-shadow:1px 1px #eeeeee inset;
+}
+
+.uploadInput{
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;	
+	opacity: 0;
+	filter: alpha(opacity=0);	
+	width:72px;
+	cursor: pointer;
+}
+
+.uploadDiv:hover{
+	box-shadow:1px 1px lightblue;
+}
+
+hr{
+	border:none;
+	height:1px;
+	background-color:#E0E0E3;
+}
+
+.uploadResultDiv{
+	border-radius:8px;
+	width:100%;
+	height:100px;
+	background-color:white;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.tdColor{
+	background-color:lightblue;
+	font-size:15px;
+	color:black;
+}
+
+.tdColor.lightRed{
+	background-color:#F9FAFB;
+	font-size:20px;
+	color:#212121;
+}
